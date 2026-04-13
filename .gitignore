@@ -1,0 +1,12 @@
+# Dafny generated artifacts
+*.cs
+*.csproj
+*.deps.json
+*.dll
+*.exe
+*.pdb
+*.js
+*.dtr
+*.runtimeconfig.json
+obj/
+bin/
