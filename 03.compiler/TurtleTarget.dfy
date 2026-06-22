@@ -23,6 +23,11 @@ module TurtleTarget {
     execProgram(initState(), p1) == execProgram(initState(), p2)
   }
 
+  predicate NoNetDisplacement(disp: map<int, int>) {
+    forall h {:trigger (h in disp), ((h + 180) in disp)} :: 0 <= h < 180 ==> 
+      (if h in disp then disp[h] else 0) == (if (h + 180) % 360 in disp then disp[(h + 180) % 360] else 0)
+  }
+
   function addDisp(m: map<int, int>, h: int, d: int): map<int, int>
     requires ValidHeading(h)
   {
