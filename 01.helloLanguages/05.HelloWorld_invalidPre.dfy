@@ -1,4 +1,5 @@
 method GetHelloWorld(langCode : string) returns (greeting: string)
+  requires langCode in {"en", "es", "fr", "de"}
 {
     var greetings := map[
         "en" := "Hello World!",
@@ -10,6 +11,6 @@ method GetHelloWorld(langCode : string) returns (greeting: string)
 }
 
 method Main () {
-    var text := GetHelloWorld("en");
+    var text := GetHelloWorld("de");
     print text;
 }
