@@ -1,5 +1,5 @@
 method GetHelloWorld(langCode : string) returns (greeting: string)
-  requires langCode in {"en", "es", "fr", "de", "de-ch"}
+  requires langCode in {"en", "es", "fr", "de"}
   ensures |greeting| > 0
   ensures '!' == greeting[|greeting| - 1]
 {
@@ -15,6 +15,6 @@ method GetHelloWorld(langCode : string) returns (greeting: string)
 }
 
 method Main () {
-    var text := GetHelloWorld("de-ch");
+    var text := GetHelloWorld("de");
     print text;
 }
